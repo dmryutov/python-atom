@@ -1,0 +1,15 @@
+# https://travis-ci.org/tornadoweb/tornado
+language: python
+python:
+    - 3.6
+
+install:
+    - pip install -r requirements.txt
+
+script:
+    - pylint project
+
+sudo: false
+
+matrix:
+    fast_finish: true
