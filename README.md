@@ -1,4 +1,5 @@
 # Python Atom
+[![Build Status](https://travis-ci.org/dmryutov/python-atom.svg?branch=master)](https://travis-ci.org/dmryutov/python-atom)
 
 This repo contains source code for course `Python Programming` (atom.mail.ru)
 
