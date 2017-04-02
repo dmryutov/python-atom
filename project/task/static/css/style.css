@@ -1,0 +1,100 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	position: relative;
+	min-height: 100%;
+	padding-bottom: 40px;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+header {
+	padding: 10px;
+	box-shadow: 0 1px 0 #ededed;
+}
+header .logo {
+	display: block;
+	text-decoration: none;
+	float: left;
+}
+header .logo img {
+	width: 32px;
+	height: 32px;
+}
+header .logo span {
+	vertical-align: super;
+	font-size: 20px;
+}
+header nav {
+	float: left;
+	margin-left: 30px;
+}
+header nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+header nav ul li {
+	position: relative;
+    display: inline-block;
+}
+header nav ul a {
+	display: block;
+	padding: 9px 4px;
+    color: #777;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: background .3s ease-in, border .3s ease-in;
+    		transition: background .3s ease-in, border .3s ease-in;
+}
+header nav ul a:hover {
+	border-color: #db4c3f;
+}
+header .menu_buttons {
+	float: right;
+}
+header .button {
+	display: inline-block;
+	padding: 7px 11px;
+    border-radius: 3px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+header .white-button {
+	background: #fbfcfd;
+    color: #777;
+    border: 1px solid #adadad;
+}
+header .white-button:hover {
+	background-color: #f1f1f1;
+}
+header .blue-button {
+	background: #4267b2;
+    color: #fff;
+    border: 1px solid #247bc6;
+}
+header .blue-button:hover {
+	background-color: #365899;
+}
+
+
+footer {
+	color: #ababab;
+	font-size: 14px;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	margin: 10px 0;
+	width: 100%;
+}

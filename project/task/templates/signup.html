@@ -1,0 +1,14 @@
+{% extends 'login.html' %}
+{% block login_title %}
+    Регистрация
+{% endblock %}
+{% block login_logo %}
+    Регистрация
+{% endblock %}
+{% block login_submit %}
+    Создать учетную запись
+{% endblock %}
+{% block login_noacc %}
+    <p>Уже есть учетная запись?</p>
+    <p><a href="{% url 'login' %}">Войти</a></p>
+{% endblock %}

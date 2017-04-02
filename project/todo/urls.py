@@ -16,6 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from task import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^^$', views.index, name='index'),
+    url(r'^login/', views.login_view, name='login'),
+    url(r'^logout/', views.logout_view, name='logout'),
+    url(r'^signup/', views.signup, name='signup'),
+    url(r'^task/', views.task, name='task'),
+
+    url(r'^add_task/', views.add_task, name='add_task'),
+    url(r'^task_complete/', views.task_complete, name='task_complete'),
+    url(r'^task_detail/', views.task_detail, name='task_detail'),
 ]

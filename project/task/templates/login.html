@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block login_title %}
+		Авторизация
+	{% endblock %}</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/login_style.css' %}" type="text/css">
+</head>
+<body>
+	<header></header>
+	<div class="login_logo">
+		<a href="/"><img src="{% static 'img/logo.png' %}"></a>
+		<h1>{% block login_logo %}
+			Авторизация
+		{% endblock %}</h1>
+	</div>
+	<div class="login_content">
+		<div class="login_form">
+			<form method="post" action="/login/">
+				{% csrf_token %}
+				<ul>
+					{% for field in form %}
+						<li class="control-group {% if field.errors %}has-error{% endif %}">
+							{{ field }}
+							{% if field.field.label != None %}
+								<label for="{{ field.id_for_label }}">
+									{{ field.field.label }}
+								</label>
+							{% endif %}
+						</li>
+					{% endfor %}
+				<button type="submit">{% block login_submit %}
+					Войти
+				{% endblock %}</button>
+			</form>
+		</div>
+		<div class="login_noacc">
+			{% block login_noacc %}
+				<p>У вас нет учетной записи?</p>
+				<p><a href="{% url 'signup' %}">Регистрация</a></p>
+			{% endblock %}
+		</div>
+	</div>
+	<footer>
+		Copyright &copy; 2017. Все права защищены.
+	</footer>
+</body>
+</html>

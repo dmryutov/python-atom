@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+<body>
+	<header>
+		<a href="/" class="logo">
+			<img src="{% static 'img/logo.png' %}">
+			<span>Title</span>
+		</a>
+		<nav>
+			<ul>
+				<li><a href="#">Пункт 1</a></li>
+				<li><a href="#">Пункт 2</a></li>
+				<li><a href="#">Пункт 3</a></li>
+			</ul>
+		</nav>
+		<div class="menu_buttons">
+			<a href="{% url 'login' %}" class="button white-button">Войти</a>
+    		<a href="{% url 'signup' %}" class="button blue-button">Создать учетную запись</a>
+		</div>
+		<div style="clear:both;"></div>
+	</header>
+	<div class="main_content">
+		текст текст текст
+	</div>
+	<footer>
+		Copyright &copy; 2017. Все права защищены.
+	</footer>
+</body>
+</html>

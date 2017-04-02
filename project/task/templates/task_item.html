@@ -1,0 +1,8 @@
+<li class="task" task-id="{{ task.id }}">
+	<span class="done"></span>
+	<div class="title"><span>{{ task.title }}</span></div>
+	<span class="date {% if task.is_failed %} failed {% endif %}">
+		{{ task.estimate|date:"d.m.Y" }}
+	</span>
+	<div class="menu"></div>
+</li>

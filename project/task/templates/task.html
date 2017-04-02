@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/task_style.css' %}" type="text/css">
+	<script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'js/Pickaday/css/pikaday.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/Pickaday/moment.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/Pickaday/js/pikaday.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/Pickaday/js/pikaday.jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+	<header>
+		<div id="header_inner">
+			<div class="logo">
+				<img src="{% static 'img/logo-white.png' %}">
+				<span>Title</span>
+			</div>
+			<div class="quick_search">
+				<img src="https://d3ptyyxy2at9ui.cloudfront.net/76084e29cb2cf72b320e888edc583dfb.gif">
+				<input class="quick_find fixed_pos" type="text text_box" placeholder="Быстрый поиск" autocomplete="off" autocorrect="off" spellcheck="false">
+			</div>
+			<div class="user">
+				<a href="#">
+					<span>{{ user }}</span>
+					<img class="avatar" src="{% static 'img/user.png' %}">
+					<div class="arrow"></div>
+				</a>
+				<ul class="user_menu">
+					<li><a href="{% url 'logout' %}">
+						<img class="logout" src="{% static 'img/icons.png' %}">Выйти</a>
+					</li>
+				</ul>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</header>
+	<div id="main_content">
+		<aside class="left">
+			<div>
+				Категории
+			</div>
+		</aside>
+		<aside class="right">
+			<div id="task_detail">
+				Подробная инфа о задаче
+			</div>
+		</aside>
+		<section>
+			<div id="editor">
+				<div class="task_list">
+					<ul>
+						{% for task in tasks %}
+							{% include "task_item.html" %}
+						{% endfor %}
+						<li class="add_task_item">
+							<form method="POST" id="add_task_form">
+							    {% csrf_token %}
+							    <div>
+							    	{{ form.title }}
+							    	{{ form.estimate }}
+							    </div>
+							    <div>
+							    	<button type="submit">Добавить</button>
+							    </div>
+							</form>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		
+		<div style="clear:both;"></div>
+	</div>
+	<footer></footer>
+</body>
+</html>
